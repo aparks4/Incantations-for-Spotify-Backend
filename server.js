@@ -19,7 +19,7 @@ const redirect_uri = 'http://localhost:4000';
 
 spotifyApi.refreshAccessToken().then(
   (data) => {
-    console.log(data);
+    console.log(data)
 
     // Save the access token so that it's used in future calls
     spotifyApi.setAccessToken(data.body['access_token']);
