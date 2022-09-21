@@ -1,0 +1,10 @@
+const mongoose = require('mongoose');
+const {MONGODB_URI} = process.env
+console.log("Connected to: "+ MONGODB_URI)
+
+mongoose.connect(MONGODB_URI, (msg)=>console.log(`${msg}`))
+
+mongoose.connection
+  .on("open", () => console.log("Connected to mongoose"))
+  .on("close", () => console.log("Disconnected from mongoose"))
+  .on("error", (error) => console.log(error));
