@@ -16,7 +16,7 @@ const {PORT, CLIENT_ID, CLIENT_SECRET} = process.env;
 const client_id = CLIENT_ID;
 const client_secret = CLIENT_SECRET;
 const redirect_uri = 'http://localhost:3000';
-
+const { Playlist } = require("./models/Playlist");
 
 // test login with user auth
 
