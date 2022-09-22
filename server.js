@@ -2,12 +2,15 @@ const express = require('express');
 const cors = require("cors")
 const bodyParser = require("body-parser")
 const SpotifyWebApi = require('spotify-web-api-node');
+const playlistController = require('./controllers/playlists-controller');
 
 
 const app = express();
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use('/playlists', playlistController);
 
 
 require("dotenv").config();
@@ -17,6 +20,7 @@ const client_id = CLIENT_ID;
 const client_secret = CLIENT_SECRET;
 const redirect_uri = 'http://localhost:3000';
 const { Playlist } = require("./models/Playlist");
+
 
 // test login with user auth
 
@@ -64,6 +68,7 @@ app.post('/refresh', (req, res) => {
       res.sendStatus(400)
     })
   })
+
 
 
 
