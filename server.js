@@ -21,7 +21,9 @@ const client_secret = CLIENT_SECRET;
 const redirect_uri = 'https://632d4dba13263e422f1d773d--prismatic-kangaroo-4608c3.netlify.app/';
 const { Playlist } = require("./models");
 
-
+app.get('/', (req, res) => {
+  res.send('wOoOoOooOoOoOo');
+})
 
 
 app.post('/login', (req, res) => {
