@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 require("dotenv").config();
 
-const {PORT, CLIENT_ID, CLIENT_SECRET} = process.env;
+const {CLIENT_ID, CLIENT_SECRET} = process.env;
 const client_id = CLIENT_ID;
 const client_secret = CLIENT_SECRET;
 const redirect_uri = 'https://632d4dba13263e422f1d773d--prismatic-kangaroo-4608c3.netlify.app/';
@@ -84,6 +84,6 @@ app.post('/', async (req, res) => {
 
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log('listening on port 4000...')
 })
