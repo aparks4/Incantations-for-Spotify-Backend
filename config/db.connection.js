@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require("dotenv").config()
 const {MONGODB_URI} = process.env
 console.log("Connected to: "+ MONGODB_URI)
 
