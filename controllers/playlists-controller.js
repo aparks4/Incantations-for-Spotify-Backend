@@ -12,14 +12,7 @@ router.get('/', async (req, res) => {
     res.send('hello');
 })
 
-// PLAYLIST CREATE ROUTE
-router.post('/', async (req, res) => {
-    try {
-        res.json(await Playlist.create(req.body));
-    } catch (error) { 
-        res.status(400).json(error);
-    }
-});
+
 
 // PLAYLIST SHOW ROUTE
 router.get("/:id", async (req, res) => {
