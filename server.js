@@ -72,13 +72,13 @@ app.post('/refresh', (req, res) => {
   })
 
 
-app.post('/', async (req, res) => {
-  try {
-      res.json(await Playlist.create(req.body));
-  } catch (error) { 
-      res.status(400).json(error);
-  }
-});
+// app.post('/', async (req, res) => {
+//   try {
+//       res.json(await Playlist.create(req.body));
+//   } catch (error) { 
+//       res.status(400).json(error);
+//   }
+// });
 
 
 
