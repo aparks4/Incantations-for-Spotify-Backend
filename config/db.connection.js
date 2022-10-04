@@ -3,7 +3,7 @@ require("dotenv").config()
 const {MONGODB_URI} = process.env
 console.log("Connected to: "+ MONGODB_URI)
 
-mongoose.connect(MONGODB_URI, (msg)=>console.log(`${msg}`))
+mongoose.connect(MONGODB_URI)
 
 mongoose.connection
   .on("open", () => console.log("Connected to mongoose"))
