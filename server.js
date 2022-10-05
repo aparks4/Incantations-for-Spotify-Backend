@@ -26,6 +26,10 @@ app.get('/', (req, res) => {
   res.send('wOoOoOooOoOoOo');
 })
 
+app.get('/login', (req, res) => {
+  res.send('login page:-)')
+})
+
 
 app.post('/login', (req, res) => {
   const code = req.body.code
