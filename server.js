@@ -21,7 +21,9 @@ const client_secret = CLIENT_SECRET;
 const redirect_uri = 'http://localhost:3000';
 const { Playlist } = require("./models");
 
-
+app.get('/', (req, res) => {
+  res.send('backend you knoooow');
+})
 
 
 app.post('/login', (req, res) => {
@@ -70,13 +72,13 @@ app.post('/refresh', (req, res) => {
   })
 
 
-app.post('/', async (req, res) => {
-  try {
-      res.json(await Playlist.create(req.body));
-  } catch (error) { 
-      res.status(400).json(error);
-  }
-});
+// app.post('/', async (req, res) => {
+//   try {
+//       res.json(await Playlist.create(req.body));
+//   } catch (error) { 
+//       res.status(400).json(error);
+//   }
+// });
 
 
 
