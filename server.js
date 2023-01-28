@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 
 
-require("dotenv").config();
+require("dotenv").config({path: './.env'});
 
 const {CLIENT_ID, CLIENT_SECRET} = process.env;
 const client_id = CLIENT_ID;
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-  res.send('login page:-)')
+  res.send('login page:-)');
 })
 
 
