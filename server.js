@@ -19,7 +19,7 @@ const {CLIENT_ID, CLIENT_SECRET} = process.env;
 const client_id = CLIENT_ID;
 const client_secret = CLIENT_SECRET;
 // const redirect_uri = 'https://632d4dba13263e422f1d773d--prismatic-kangaroo-4608c3.netlify.app/';
-const redirect_uri = 'https://beamish-eclair-ddafee.netlify.app/';
+const redirect_uri = 'https://beamish-eclair-ddafee.netlify.app';
 const { Playlist } = require("./models");
 
 app.get('/', (req, res) => {
