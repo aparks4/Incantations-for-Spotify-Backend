@@ -2,12 +2,15 @@ const express = require('express');
 const cors = require("cors")
 const bodyParser = require("body-parser")
 const SpotifyWebApi = require('spotify-web-api-node');
+const playlistController = require('./controllers/playlists-controller');
 
 
 const app = express();
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use('/playlists', playlistController);
 
 
 require("dotenv").config();
@@ -16,6 +19,7 @@ const {PORT, CLIENT_ID, CLIENT_SECRET} = process.env;
 const client_id = CLIENT_ID;
 const client_secret = CLIENT_SECRET;
 const redirect_uri = 'https://632d4dba13263e422f1d773d--prismatic-kangaroo-4608c3.netlify.app/';
+const { Playlist } = require("./models");
 
 
 // test login with user auth
@@ -65,6 +69,15 @@ app.post('/refresh', (req, res) => {
     })
   })
 
+// PLAYLIST CREATE ROUTE
+app.post('/', async (req, res) => {
+  try {
+      console.log(req.body)
+      res.json(await Playlist.create(req.body));
+  } catch (error) { 
+      res.status(400).json(error);
+  }
+});
 
 
 
